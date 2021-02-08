@@ -1,0 +1,38 @@
+--Tabela para Venda de Produtos em Estoque
+
+--show all
+--set serveroutput ON; 
+--variable v_nome_completo VARCHAR2(100);
+--execute :v_nome_completo := dados_empoyee(9);
+--print v_nome_completo
+
+--SELECT * FROM ESTOQUE
+
+CREATE TABLE ESTOQUE
+(
+   EST_CODIGO NUMBER,
+   EST_NOME VARCHAR2(40),
+   EST_TIPO VARCHAR2(2),
+   EST_PRECOVENDA NUMBER,
+   EST_DATACAD DATE
+);
+
+INSERT INTO ESTOQUE (EST_CODIGO, EST_NOME, EST_TIPO, EST_PRECOVENDA, EST_DATACAD)
+             VALUES (4, 'Video Aula Delphi', 'UN', 99, SYSDATE);
+
+ALTER TABLE ESTOQUE ADD EST_QUANTIDADE NUMBER;
+
+UPDATE ESTOQUE SET EST_QUANTIDADE = 100;
+
+CREATE TABLE VENDA
+(
+   VEN_CODIGO NUMBER,
+   VEN_NOMEPROD NUMBER,
+   VEN_QUANTIDADE NUMBER
+);
+
+SELECT * FROM VENDA
+
+INSERT INTO VENDA VALUES (1,1,2)
+
+DELETE VENDA
